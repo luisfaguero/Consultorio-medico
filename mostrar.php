@@ -11,7 +11,7 @@ include('db.php');
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/estilos.css">
     
-    <title>Form</title>
+    <title>Dra. Yanina Nadina Resumi</title>
 </head>
 <body>
   <!-----------cabecera-->
@@ -28,17 +28,17 @@ include('db.php');
             <a href="">Informes De Estudios</a>
         </nav>
     </div>
-</header>
+</header><br<br><br><br>
 
 <!------------mmostrar------>
-<div class="espacio-tabla">
+<div class="container mt-5">
 <table class="table table-dark table-striped">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Nombre</th>
-      <th scope="col">Direccion</th>
-      <th scope="col">Dni</th>
+      <th scope="col">Apellido</th>
+      
       <th scope="col">Acciones</th>
     </tr>
   </thead>
@@ -46,7 +46,7 @@ include('db.php');
 
 <?php
 
-    $sql="SELECT * FROM usuarios";
+    $sql="SELECT * FROM pacientes";
     $result = mysqli_query($bd, $sql);
 
     while($mostrar = mysqli_fetch_array($result)){
@@ -57,12 +57,12 @@ include('db.php');
     <tr>
       <td><?php echo $mostrar['id'] ?></td>
        <td><?php echo $mostrar['nombre'] ?></td>
-       <td><?php echo $mostrar['usuario'] ?></td>
-       <td><?php echo $mostrar['contrasenia'] ?></td>
+       <td><?php echo $mostrar['apellido'] ?></td>
        
+
        <td>
     
-        <a href="modificar.php?Id=<?php echo $mostrar['id'];?>"><input class="btn btn-primary" type="submit" value="Ver HC" name="btnModificar"></a>
+        <a href="modificar.php?Id=<?php echo $mostrar['id'];?>"><input class="btn btn-primary" type="submit" value="Ver Historial" name="btnModificar"></a>
 </td>
            
         </form>
